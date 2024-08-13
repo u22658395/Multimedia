@@ -15,4 +15,8 @@ class PetHandler {
   constructor(arr) {
     this.pets = arr
   }
+
+  findPetsInAgeRange(minAge, maxAge){
+    return pets.filter(pet => pet.age >= minAge && pet.age <= maxAge);
+  }
 }
