@@ -19,4 +19,11 @@ class PetHandler {
   findPetsInAgeRange(minAge, maxAge){
     return pets.filter(pet => pet.age >= minAge && pet.age <= maxAge);
   }
+
+  listAdoptedPetsByDate(){
+   
+    return pets.filter(pet => pet.adopted === true)
+        .sort((a, b) => new Date(b.adoptedDate) - new Date(a.adoptedDate)); // Sort by adoption date in reverse chronological order
+    
+  }
 }
