@@ -10,3 +10,9 @@ var pets = [
   { name: "Buddy", species: "dog", age: 10, adopted: true, adoptedDate: "2021-02-01", adoptionFee: 735 },
   { name: "Pebbles", species: "bird", age: 4, adopted: false, adoptedDate: "", adoptionFee: 505 },
 ];
+
+class PetHandler {
+  constructor(arr) {
+    this.pets = arr
+  }
+}
