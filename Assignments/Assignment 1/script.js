@@ -25,7 +25,7 @@ class PetHandler {
       .sort((a, b) => new Date(b.adoptedDate) - new Date(a.adoptedDate));
   }
 
-  ListPets(){
+  listPets(){
     function createPetItem(pet) {
       let petString = `${pet.name} | ${pet.species} | Age: ${pet.age}`;
       if (pet.adopted) {
@@ -37,12 +37,10 @@ class PetHandler {
     let petsToReturn;
   
     if (arguments.length === 0) {      
-      // No arguments provided, use the member variable
       petsToReturn = this.pets;
     }
     else {
       if(arguments.length === 1 && Array.isArray(arguments[0])) {
-        // Single array argument provided
         petsToReturn = arguments[0];
       } 
       else {
@@ -52,7 +50,7 @@ class PetHandler {
 
     }
   
-    return petsToReturn.map(createPetItem);
+    return petsToReturn.map(createPetItem).join("\n");
   }
 
   calculateUniqueAdoptionFee(petNames){
@@ -63,7 +61,6 @@ class PetHandler {
       return self.indexOf(value) === index;
     });
     
-    // // Step 2: Find the matching pets
     const selectedPets = pets.filter(pet => uniquePetNames.includes(pet.name));
     
     const totalAdoptionFee = selectedPets.reduce((accumulator, pet) => {
@@ -74,10 +71,29 @@ class PetHandler {
   }
 }
 
-var pHandler = new PetHandler(pets);
-console.log("findPetsInAgeRange: ", pHandler.findPetsInAgeRange(1,5));
-console.log("listAdoptedPetsByDate", pHandler.listAdoptedPetsByDate());
-console.log("ListPets: ", pHandler.ListPets({ name: "Buddy", species: "dog", age: 10, adopted: true, adoptedDate: "2021-02-01", adoptionFee: 735 },{ name: "Polly", species: "bird", age: 1, adopted: false, adoptedDate: "", adoptionFee: 560 }));
-console.log("calculateUniqueAdoptionFee: ", pHandler.calculateUniqueAdoptionFee("Buddy",  "Coco",  "10",  "true",  "Buddy",  "735"));
-// console.log(pHandler.ListPets());
+Array.prototype.listPets = function() {
+  function createPetItem(pet) {
+    let petString = `${pet.name} | ${pet.species} | Age: ${pet.age}`;
+    if (pet.adopted) {
+      petString += " | Adopted!";
+    }
+    return petString;
+  }
+
+  let petsToReturn;
+
+  if (arguments.length === 0) {      
+    petsToReturn = this;
+  }
+  else {
+    if(arguments.length === 1 && Array.isArray(arguments[0])) {
+      petsToReturn = arguments[0];
+    } 
+    else {
+      petsToReturn = Array.prototype.slice.apply(arguments);
+    }
+  }
+
+  return petsToReturn.map(createPetItem).join("\n");
+};
 
