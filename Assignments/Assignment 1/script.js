@@ -54,6 +54,24 @@ class PetHandler {
   
     return petsToReturn.map(createPetItem);
   }
+
+  calculateUniqueAdoptionFee(petNames){
+
+    var petsNamesArr = Array.prototype.slice.apply(arguments);
+    
+    var uniquePetNames = petsNamesArr.filter((value, index, self) => {
+      return self.indexOf(value) === index;
+    });
+    
+    // // Step 2: Find the matching pets
+    const selectedPets = pets.filter(pet => uniquePetNames.includes(pet.name));
+    
+    const totalAdoptionFee = selectedPets.reduce((accumulator, pet) => {
+      return accumulator + pet.adoptionFee;
+    }, 0);
+
+    return totalAdoptionFee;
+  }
 }
 
 var pHandler = new PetHandler(pets);
