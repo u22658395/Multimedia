@@ -71,6 +71,10 @@ class PetHandler {
   }
 }
 
+Array.prototype.calculateUniqueAdoptionFee = PetHandler.prototype.calculateUniqueAdoptionFee;
+Array.prototype.findPetsInAgeRange = PetHandler.prototype.findPetsInAgeRange;
+Array.prototype.listAdoptedPetsByDate = PetHandler.prototype.listAdoptedPetsByDate;
+
 Array.prototype.listPets = function() {
   function createPetItem(pet) {
     let petString = `${pet.name} | ${pet.species} | Age: ${pet.age}`;
