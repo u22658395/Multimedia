@@ -19,11 +19,10 @@ var votes = {};
 
 io.on('connection', (socket)=>{
     console.log(`'A user connected with ID: ${socket.id}`);
+    socket.emit("update", JSON.stringify(votes));
 
 
-    socket.on("vote", (catName)=>{
-        console.log(`update ${catName}`);
-        
+    socket.on("vote", (catName)=>{        
         if(!votes[catName]){
             votes[catName] = 1;
             socket.emit("update", JSON.stringify(votes));
