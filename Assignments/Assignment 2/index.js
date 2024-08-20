@@ -25,14 +25,16 @@ function formEvent(event) {
 }
 
 var updateHandler = function(data){
-
     data = JSON.parse(data);
-    
+
+    var total = 0;
     Object.keys(data).forEach(key => {
         var label = document.querySelector(`input[id="${key}"]`).nextElementSibling;
         var span = label.firstElementChild;
         span.textContent = data[key];
-        
+        total+=data[key];
     });
+
+    document.getElementById('total-votes').textContent = total;
     
 }
