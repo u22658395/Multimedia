@@ -15,12 +15,30 @@ server.listen(port, ()=>{
     console.log(`Listening on http://localhost:${port}`); 
 })
 
+var votes = {};
+
 io.on('connection', (socket)=>{
     console.log(`'A user connected with ID: ${socket.id}`);
 
-    socket.on("disconnect",()=>{
-        console.log("A user has disconnected");
+
+    socket.on("vote", (catName)=>{
+        console.log(`update ${catName}`);
         
+        if(!votes[catName]){
+            votes[catName] = 1;
+            socket.emit("update", JSON.stringify(votes));
+        }
+        else{
+            votes[catName]++;
+            socket.emit("update", JSON.stringify(votes));
+        }
+
+
+        
+    })
+
+    socket.on("disconnect",()=>{
+        console.log("A user has disconnected");  
     })
     
 })
