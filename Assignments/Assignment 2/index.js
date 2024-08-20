@@ -25,16 +25,19 @@ function formEvent(event) {
 }
 
 var updateHandler = function(data){
+    
     data = JSON.parse(data);
 
     var total = 0;
-    Object.keys(data).forEach(key => {
-        var label = document.querySelector(`input[id="${key}"]`).nextElementSibling;
+    data.map(elem=>{
+        var label = document.querySelector(`input[id="${elem.name}"]`).nextElementSibling;
         var span = label.firstElementChild;
-        span.textContent = data[key];
-        total+=data[key];
-    });
+        span.textContent = elem.votes;
+        total+=elem.votes;
+    })
 
-    document.getElementById('total-votes').textContent = total;
-    
+    // Object.keys(data).forEach(key => {
+    // });
+
+    document.getElementById('total-votes').textContent = total;    
 }

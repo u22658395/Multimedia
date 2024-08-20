@@ -5,6 +5,8 @@ const port = 3000;
 const server = http.createServer(app)
 const {Server} = require('socket.io');
 const io = new Server(server);
+var {Poll} = require("./poll")
+var votes = Poll.getVotes();
 
 app.use(express.static("./"))
 app.get('/', (req, res) =>{
@@ -15,25 +17,19 @@ server.listen(port, ()=>{
     console.log(`Listening on http://localhost:${port}`); 
 })
 
-var votes = {};
 
 io.on('connection', (socket)=>{
+    
     console.log(`'A user connected with ID: ${socket.id}`);
+    console.log("votes: ");
+    console.log(votes);
+
     socket.emit("update", JSON.stringify(votes));
 
 
     socket.on("vote", (catName)=>{        
-        if(!votes[catName]){
-            votes[catName] = 1;
-            io.emit("update", JSON.stringify(votes));  //io.emit emits to all the clients connected to the server
-        }
-        else{
-            votes[catName]++;
-            io.emit("update", JSON.stringify(votes));
-        }
-
-
-        
+        Poll.vote(catName)
+        io.emit("update", JSON.stringify(votes));  //io.emit emits to all the clients connected to the server    
     })
 
     socket.on("disconnect",()=>{
