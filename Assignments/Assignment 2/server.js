@@ -25,11 +25,11 @@ io.on('connection', (socket)=>{
     socket.on("vote", (catName)=>{        
         if(!votes[catName]){
             votes[catName] = 1;
-            socket.emit("update", JSON.stringify(votes));
+            io.emit("update", JSON.stringify(votes));  //io.emit emits to all the clients connected to the server
         }
         else{
             votes[catName]++;
-            socket.emit("update", JSON.stringify(votes));
+            io.emit("update", JSON.stringify(votes));
         }
 
 
