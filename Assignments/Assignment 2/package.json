@@ -9,6 +9,7 @@
   "author": "Katlego u22658395",
   "license": "ISC",
   "dependencies": {
+    "assignment-2": "file:",
     "express": "^4.19.2",
     "socket.io": "^4.7.5"
   }

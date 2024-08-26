@@ -21,11 +21,7 @@ server.listen(port, ()=>{
 io.on('connection', (socket)=>{
     
     console.log(`'A user connected with ID: ${socket.id}`);
-    console.log("votes: ");
-    console.log(votes);
-
     socket.emit("update", JSON.stringify(votes));
-
 
     socket.on("vote", (catName)=>{        
         Poll.vote(catName)
