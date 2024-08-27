@@ -31,6 +31,25 @@
           )
         }
       }
+
+      class EventFeed extends ReactComponent{
+        constructor(props){
+          super(props)
+        }
+        render(){
+          return(
+            <>
+              {
+                this.props.events.sort((a,b)=>{
+                  new Date(b.date) - new Date(a.date)
+                }).map(event=>{
+                  return <Event name={event.name} date={event.date} description={event.description}/>
+                })
+              }
+            </>
+          )
+        }
+      }
     </script>
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
