@@ -16,6 +16,27 @@ class Event extends React.Component{
       
       
 // EventFeed Component
+class EventFeed extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    let events = this.props.events
+    this.props.events.sort((a,b)=>{
+      return new Date(b.date) - new Date(a.date)
+    })    
+    return(
+      <>
+        <h3>Feed</h3>
+        {
+          this.props.events.map(event=>{    
+            return <Event name={event.name} date={event.date} description={event.description}/>
+          })
+        }
+      </>
+    )
+  }
+}
 
 // Search Component
 
@@ -24,5 +45,5 @@ class Event extends React.Component{
 
 // render here
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
+root.render(<App/>);
 // complete this code
