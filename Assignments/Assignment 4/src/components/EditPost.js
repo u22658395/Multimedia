@@ -1,3 +1,4 @@
+// 22658395 Katlego Mositi
 import React from "react";
 
 export class EditPost extends React.Component{
