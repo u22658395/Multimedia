@@ -2,10 +2,11 @@
   "name": "playlist_web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "frontend/src/index.js",
   "scripts": {
-    "build": "webpack && babel server.js -d dist",
-    "start": "npm run build && node dist/server.js",
+    "build": "webpack && babel backend/server.js -d backend/dist",
+    "start": "npm run build && node backend/dist/server.js",
+    "watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Katlego Mositi",
