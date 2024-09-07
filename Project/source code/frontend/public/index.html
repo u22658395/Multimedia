@@ -3,10 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <title>Node + react</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
-    <h1>Our first React app in Node</h1>
+    <div id="navbar">
+        <span  id="logo">GrooveList</span>
+
+        <span id="pages">
+            <span class="page">Home</span>
+            <span class="page">Playlist</span>
+            <span class="page">Profile</span>
+        </span>
+
+        <span class="page" id="login-button">Login</span>
+    </div>
+
     <div id="root"></div>
     <script type="text/javascript" src="bundle.js"></script>
 </body>
