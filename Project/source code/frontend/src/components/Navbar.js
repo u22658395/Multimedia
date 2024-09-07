@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export class Navbar extends React.Component {
 
@@ -8,9 +9,9 @@ export class Navbar extends React.Component {
                 <span id="logo">GrooveList</span>
 
                 <span id="pages">
-                    <span className="page">Home</span>
-                    <span className="page">Playlist</span>
-                    <span className="page">Profile</span>
+                    <Link to="/" className="page">Home</Link>
+                    <Link to="/" className="page">Playlist</Link>
+                    <Link to="/" className="page">Profile</Link>
                 </span>
 
                 <span className="page" id="login-button">Login</span>
