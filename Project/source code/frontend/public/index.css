@@ -85,7 +85,74 @@ body{
 #sub-heading{
     padding: 5px 260px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     /* width:900px */
 }
+
+#slider{
+    display:flex;
+    padding: 29px ;
+    background-color: #202020;
+    overflow-x: auto;
+    justify-content: space-evenly;
+    margin: 20px 0 0 0;
+}
+
+.playlist{
+    background-color: #212121;
+    min-width:290px;
+    height: 380px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.612);
+    margin:10px 50px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.image-container{
+    width:100%;
+    height: 70%;
+    margin-bottom: 5px ;
+}
+
+.playlist-image{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.playlist-content{
+    margin: 7px 0;
+}
+
+.playlist-content > div{
+    font-family: "Red Hat Display", sans-serif;
+    /* margin: 5px 0; */
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.playlist-title{
+    font-weight: 800;
+    color: #015fcd;
+    font-size: 20px;
+    align-items: center;
+}
+
+.playlist-duration{
+    color: #fff;
+    align-items: center;
+}
+
+.playlist-description{
+    margin: 7px 0;
+    /* text-align: center; */
+    font-family: "Smooch Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    overflow: auto;
+    height: 55px;
+}
+
 
