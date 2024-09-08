@@ -10,7 +10,7 @@ export class App extends React.Component {
             <BrowserRouter>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
+                    <Route path="/Home" element={<Home/>}/>
                     {/* // <Route path="/playlists" element={<Playlists/>}/>
                     // <Route path="/playlist" element={<Playlist/>}/>
                     // <Route path="/profile" element={<Profile/>}/> */}
