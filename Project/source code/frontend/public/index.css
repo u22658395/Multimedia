@@ -202,3 +202,224 @@ body{
     cursor: pointer;
 }
 
+/* login */
+
+#login-container {
+    top: 67px;
+    width: 100%;
+    height: calc(100% - 67px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+}
+
+.wrapper {
+    min-height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    background: transparent;
+    height: fit-content;
+}
+
+.inner {
+    top: -60px;
+    padding: 20px;
+    background: fixed linear-gradient(45deg, rgb(30, 173, 255), rgb(113, 161, 228), rgba(55, 0, 255, 0.753));
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    height: 400px;
+    max-width: 700px;
+}
+
+.inner .image-holder {
+    width: 50%;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.975);
+}
+
+.image-holder>img {
+    width: 60%;
+}
+
+.inner #form {
+    width: 50%;
+    padding-top: 36px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.inner h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: "Poppins-SemiBold";
+    text-align: center;
+    margin-bottom: 28px;
+    color: #000000;
+}
+
+.form-group {
+    display: flex;
+
+}
+
+.form-group input {
+    width: 50%;
+
+}
+
+.form-group input:first-child {
+    margin-right: 25px;
+}
+
+.form-wrapper {
+    position: relative;
+}
+
+.form-wrapper i {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+}
+
+.form-control {
+    border: 1px solid #333;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.986);
+    padding-left: 5px;
+    font-size: 21px;
+}
+
+.form-control::-webkit-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular";
+}
+
+.form-control::-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular";
+}
+
+.form-control:-ms-input-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular";
+}
+
+.form-control:-moz-placeholder {
+    font-size: 13px;
+    color: #333;
+    font-family: "Poppins-Regular";
+}
+
+select {
+    /* -moz-appearance: none;
+  -webkit-appearance: none; */
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+select option[value=""][disabled] {
+    display: none;
+}
+
+#login-submit-button {
+    border: none;
+    width: 164px;
+    height: 51px;
+    margin: auto;
+    margin-top: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #000000;
+    font-size: 15px;
+    color: #fff;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#login-submit-button i {
+    margin-left: 10px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+#login-submit-button:hover i,
+#login-submit-button:focus i,
+#login-submit-button:active i {
+    -webkit-animation-name: hvr-icon-wobble-horizontal;
+    animation-name: hvr-icon-wobble-horizontal;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+
+@media (max-width: 1199px) {
+    .wrapper {
+        background-position: right center;
+    }
+}
+
+@media (max-width: 991px) {
+    .inner #form {
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .inner {
+        display: block;
+        min-width: fit-content;
+        width: 50%;
+    }
+
+    .inner .image-holder {
+        display: none;
+    }
+
+    .inner #form {
+        width: 100%;
+        padding: 0 0 0;
+    }
+
+    #login-submit-button {
+        margin-top: 60px;
+    }
+
+}
+
+
+/* div[class$="row"] {
+    margin: 0%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+} */
