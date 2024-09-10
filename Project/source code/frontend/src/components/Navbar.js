@@ -21,7 +21,7 @@ export class Navbar extends React.Component {
     render(){
         let overlay;
         if(this.state.toggledOverlay){
-            overlay = <Overlay toggleForm={this.toggleOverlay} content={this.loginForm} />
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.loginForm} />
         }
         else{
             overlay = "";

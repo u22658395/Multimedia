@@ -2,15 +2,12 @@ import React from "react";
 export class Overlay extends React.Component{
     constructor(props) {
         super(props)
-        this.state = {
-            toggledOverlay:false
-        }
         this.toggleOverlay = this.toggleOverlay.bind(this);
         this.displayContent = this.displayContent.bind(this);
 
     }
     toggleOverlay(){
-        this.setState({toggledOverlay:!this.state.toggledOverlay})
+        this.props.toggleOverlay();
     }
     displayContent(){
         return this.props.content();
@@ -21,7 +18,7 @@ export class Overlay extends React.Component{
                 <span id="overlay-content">
                     {this.displayContent()}
                 </span>
-                <div onClick={this.props.toggleForm} id="close-overlay">
+                <div id="close-overlay" onClick={this.toggleOverlay} >
                     x
                 </div>
             </div>

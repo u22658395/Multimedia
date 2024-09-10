@@ -403,6 +403,11 @@ select option[value=""][disabled] {
     display: flex;
     margin-top: 8px;
     cursor: pointer;
+    text-decoration: underline;
+}
+
+#form-anchor:hover {
+    color: #7f2fff;
 }
 
 @media (max-width: 1199px) {
