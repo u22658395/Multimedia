@@ -396,6 +396,15 @@ select option[value=""][disabled] {
 }
 
 
+#form-anchor{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
 @media (max-width: 1199px) {
     .wrapper {
         background-position: right center;
