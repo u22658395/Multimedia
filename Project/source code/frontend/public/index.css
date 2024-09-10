@@ -199,8 +199,16 @@ body{
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
+
+
+#close-overlay{
+    border: red solid;
+    font-size: 32px;
+    float: right;
+}
+
 
 /* login */
 
@@ -228,25 +236,32 @@ body{
 .inner {
     top: -60px;
     padding: 20px;
-    background: fixed linear-gradient(45deg, rgb(30, 173, 255), rgb(113, 161, 228), rgba(55, 0, 255, 0.753));
+    background: fixed linear-gradient(45deg, rgb(30, 173, 255), rgb(113, 161, 228), rgb(67, 15, 255));
     max-width: 850px;
     margin: auto;
     display: flex;
-    height: 400px;
+    height: fit-content;
     max-width: 700px;
+    /* max-height: 560px; */
 }
+
+
 
 .inner .image-holder {
     width: 50%;
-    height: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.975);
 }
 
+.image-holder {
+    max-height: 445px;
+}
+
 .image-holder>img {
     width: 60%;
+    height: 100%;
 }
 
 .inner #form {
