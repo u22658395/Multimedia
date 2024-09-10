@@ -5,9 +5,11 @@ export class Navbar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            login:false
+            toggledLogin:false
         }
     }
+    toggleLogin(){
+        this.setState({ toggledLogin: !this.state.toggled }); }
     render(){
         return(
             <div id="navbar">
