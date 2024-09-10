@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LoginForm, Overlay } from "./Overlay";
+import { Overlay } from "./Overlay";
+import {LoginForm} from "./LoginForm"
 
 export class Navbar extends React.Component {
     constructor(props){
@@ -18,7 +19,13 @@ export class Navbar extends React.Component {
         return <LoginForm/>
     }
     render(){
-        
+        let overlay;
+        if(this.state.toggledOverlay){
+            overlay = <Overlay toggleForm={this.toggleOverlay} content={this.loginForm} />
+        }
+        else{
+            overlay = "";
+        }
         return(
             <div id="navbar">
                 <span id="logo">GrooveList</span>
@@ -31,7 +38,7 @@ export class Navbar extends React.Component {
 
                 <span onClick={this.toggleOverlay} className="page" id="login-button">Login</span>
                 
-                {this.state.toggledOverlay ? <Overlay toggleForm={this.toggleOverlay} content={this.loginForm} />:""}
+                {overlay}
             </div>
 
         )
