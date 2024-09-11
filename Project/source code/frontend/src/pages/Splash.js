@@ -11,7 +11,7 @@ export class Splash extends React.Component {
     ]
     render(){
         return(
-            <>
+            <div id="content">
                 <h1 className="welcome-text" id="heading-text">Welcome to GrooveList: Your Musical Oasis</h1>
                 <p className="welcome-text" id="sub-heading">Step into GrooveList, where your musical journey begins. Here, melodies come alive, playlists tell stories, and every
                 beat connects us. Discover, create, and share playlists that resonate with your soul. Whether you're a passionate
@@ -29,7 +29,7 @@ export class Splash extends React.Component {
                     
                 </div>
 
-            </>
+            </div>
         )
     }
 }
