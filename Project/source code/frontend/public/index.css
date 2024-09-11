@@ -45,7 +45,7 @@ body{
     background-color: #262626;
     box-shadow: 0px 0px 19px 9px rgba(0, 0, 0, 0.612);
     padding: 0 50px;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
 }
 
@@ -455,3 +455,45 @@ select option[value=""][disabled] {
     padding-top: 2%;
     padding-bottom: 2%;
 } */
+
+/* Profile */
+
+#profile-info {
+    width: 400px;
+    height: 100vh;
+    padding-right: 15px;
+    margin-right: 15px;
+    float: left;
+    font-style: italic;
+    background-color: lightgray;
+    
+}
+
+#profile-image-container{
+    width: 100%;
+}
+
+#profile-image{
+    width: 100%;
+}
+
+#main{
+    /* border: red solid; */
+    margin: 20px 0 0 400px;
+    height: 100%;
+}
+
+#playlists {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 29px;
+    /* background-color: #202020; */
+    height: 100%;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+}
+
+#content{
+    /* margin-top: 50px; */
+}
