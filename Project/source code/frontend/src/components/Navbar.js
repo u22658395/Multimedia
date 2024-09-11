@@ -33,7 +33,7 @@ export class Navbar extends React.Component {
                 <span id="pages">
                     <Link to="/" className="page">Home</Link>
                     <Link to="/" className="page">Playlists</Link>
-                    <Link to="/" className="page">Profile</Link>
+                    <Link to="/profile" className="page">Profile</Link>
                 </span>
 
                 <span onClick={this.toggleOverlay} className="page" id="login-button">Login</span>
