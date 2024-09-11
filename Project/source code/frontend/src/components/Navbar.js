@@ -27,18 +27,20 @@ export class Navbar extends React.Component {
             overlay = "";
         }
         return(
-            <div id="navbar">
-                <span id="logo">GrooveList</span>
+            <div id="nav-wrapper">
+                <div id="navbar">
+                    <span id="logo">GrooveList</span>
 
-                <span id="pages">
-                    <Link to="/" className="page">Home</Link>
-                    <Link to="/" className="page">Playlists</Link>
-                    <Link to="/profile" className="page">Profile</Link>
-                </span>
+                    <span id="pages">
+                        <Link to="/" className="page">Home</Link>
+                        <Link to="/" className="page">Playlists</Link>
+                        <Link to="/profile" className="page">Profile</Link>
+                    </span>
 
-                <span onClick={this.toggleOverlay} className="page" id="login-button">Login</span>
-                
-                {overlay}
+                    <span onClick={this.toggleOverlay} className="page" id="login-button">Login</span>
+                    
+                    {overlay}
+                </div>
             </div>
 
         )
