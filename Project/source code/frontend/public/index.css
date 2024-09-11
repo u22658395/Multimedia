@@ -207,6 +207,7 @@ body{
     border: red solid;
     font-size: 32px;
     float: right;
+    cursor: pointer;
 }
 
 

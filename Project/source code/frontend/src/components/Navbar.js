@@ -32,7 +32,7 @@ export class Navbar extends React.Component {
 
                 <span id="pages">
                     <Link to="/" className="page">Home</Link>
-                    <Link to="/" className="page">Playlist</Link>
+                    <Link to="/" className="page">Playlists</Link>
                     <Link to="/" className="page">Profile</Link>
                 </span>
 
