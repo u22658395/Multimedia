@@ -32,15 +32,15 @@ export class Profile extends React.Component {
                     </div>
 
                     <div id="friends-container">
-                        <div class="counter-container" >
+                        <div className="counter-container" >
                             <div className='counter'>{this.user.playlistCount}</div>
                             <div className='counter-name'>Playlists</div>
                         </div>
-                        <div class="counter-container">
+                        <div className="counter-container">
                             <div className='counter'>{this.user.followersCount}</div>
                             <div className='counter-name'>Followers</div>
                         </div>
-                        <div class="counter-container">
+                        <div className="counter-container">
                             <div className='counter'>{this.user.followingCount}</div>
                             <div className='counter-name'>Following</div>
                         </div>
@@ -50,9 +50,13 @@ export class Profile extends React.Component {
                 </aside>
                 <main id="main">
                     <div id='main-content-heading-container'>
-                        <div className=''></div>
                         <h1 className='content-heading'>Playlists</h1>
-                        <span className='fa-solid fa-plus'></span>
+                        <div id='add-button-container'>
+                            <span>Add playlist</span>
+                            <span id='plus-icon-container'>
+                                <i className='fa-solid fa-lg fa-plus '></i>
+                            </span>
+                        </div>
                     </div>
                     <div id="playlists">
                         <div className="playlist">

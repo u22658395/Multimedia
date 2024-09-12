@@ -594,9 +594,52 @@ select option[value=""][disabled] {
 #main-content-heading-container {
     margin: auto;
     text-align: center;
-    font-family: "Red Hat Display", sans-serif;
-    font-weight: 800;
+    font-size: 40px;
 }
+
+.content-heading {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 900;
+    color: #fff;
+}
+
+#add-button-container{
+    height: 40px;
+    position: relative;
+    float: right;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b0b0b;
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+#add-button-container:hover {
+    color: #325bff;
+}
+
+#add-button-container:hover #plus-icon-container {
+    /* color: #325bff;
+    background-color: #6dafff; */
+
+}
+
+#plus-icon-container{
+    background-color: #3791ff;
+    color: #000000;
+    padding: 2px;
+    border-radius: 50%;
+    margin-left: 9px;
+    font-weight: 900;
+    /* height: 36px;
+    width: 36px; */
+}
+
+
 
 #playlists {
     width: 100%;
