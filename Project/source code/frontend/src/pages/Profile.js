@@ -1,4 +1,5 @@
 import React from 'react';
+import { PlaylistFeed } from '../components/playlistFeed';
 
 export class Profile extends React.Component {
     // user
@@ -58,75 +59,7 @@ export class Profile extends React.Component {
                             </span>
                         </div>
                     </div>
-                    <div id="playlists">
-                        <div className="playlist">
-                            <div className="image-container">
-                                <img src="./assets/images/Designer (10).jpeg" alt="" className="playlist-image" />
-                            </div>
-                            <div className="playlist-content">
-                                <div className="playlist-heading">
-                                    <span className="playlist-title">John Doe</span>
-                                    <span className="playlist-duration">56 mins </span>
-                                </div>
-                                <div className="playlist-subheading">
-                                    <span className="playlist-author">John Doe</span>
-                                    <span className="playlist-rating">* * * * *</span>
-                                </div>
-                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder </div>
-                            </div>
-                        </div>
-
-                        <div className="playlist">
-                            <div className="image-container">
-                                <img src="./assets/images/Designer (10).jpeg" alt="" className="playlist-image" />
-                            </div>
-                            <div className="playlist-content">
-                                <div className="playlist-heading">
-                                    <span className="playlist-title">John Doe</span>
-                                    <span className="playlist-duration">56 mins </span>
-                                </div>
-                                <div className="playlist-subheading">
-                                    <span className="playlist-author">John Doe</span>
-                                    <span className="playlist-rating">* * * * *</span>
-                                </div>
-                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
-                            </div>
-                        </div>
-
-                        <div className="playlist">
-                            <div className="image-container">
-                                <img src="./assets/images/Designer (10).jpeg" alt="" className="playlist-image" />
-                            </div>
-                            <div className="playlist-content">
-                                <div className="playlist-heading">
-                                    <span className="playlist-title">John Doe</span>
-                                    <span className="playlist-duration">56 mins </span>
-                                </div>
-                                <div className="playlist-subheading">
-                                    <span className="playlist-author">John Doe</span>
-                                    <span className="playlist-rating">* * * * *</span>
-                                </div>
-                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
-                            </div>
-                        </div>
-
-                        <div className="playlist">
-                            <div className="image-container">
-                                <img src="./assets/images/Designer (10).jpeg" alt="" className="playlist-image" />
-                            </div>
-                            <div className="playlist-content">
-                                <div className="playlist-heading">
-                                    <span className="playlist-title">John Doe</span>
-                                    <span className="playlist-duration">56 mins </span>
-                                </div>
-                                <div className="playlist-subheading">
-                                    <span className="playlist-author">John Doe</span>
-                                    <span className="playlist-rating">* * * * *</span>
-                                </div>
-                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
-                            </div>
-                        </div>
-                    </div>
+                    <PlaylistFeed playlists={this.user.playlists} />
                 </main>
             </div>
         )
