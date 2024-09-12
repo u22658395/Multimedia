@@ -15,7 +15,7 @@ export class Profile extends React.Component {
                         <img id="profile-image" src="./assets/images/Designer (7).jpeg" alt=""/>
                     </div>
 
-                    <div id="details-heading">{this.user.username}<i className="fa-solid fa-pencil" ></i></div>
+                    <div id="details-heading">{this.user.username}<i id='profile-edit-button' className="fa-solid fa-pencil" ></i></div>
                     <div id="details-container">
                         <div id="name-container">
                             

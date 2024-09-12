@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Splash } from "./pages/Splash";
 import { Profile } from "./pages/Profile";
+import { Playlist } from "./pages/Playlist";
 
 
 export class App extends React.Component {
@@ -21,7 +22,8 @@ export class App extends React.Component {
                 <Routes>
                     <Route path="/" element={<Splash/>}/>
                     <Route path="/Home" element={<Home/>}/>
-                    {/* // <Route path="/playlists" element={<Playlists/>}/>
+                    <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} />} />
+                    {/* // 
                     //<Route path="/playlist" element={<Playlist/>}/> */}
                     <Route path="/profile" element={<Profile user={{
                         username:"unknown_k",

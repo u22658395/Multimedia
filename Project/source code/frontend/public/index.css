@@ -472,6 +472,7 @@ select option[value=""][disabled] {
     /* border: red solid; */
     position: absolute;
     top: 111px;
+    width: 100%;
     /* border: red solid; */
     /* top */
 }
@@ -526,7 +527,7 @@ select option[value=""][disabled] {
 }
 
 
-.fa-pencil {
+#profile-edit-button {
     height: 100%;
     position: relative;
     float: right;
@@ -589,6 +590,7 @@ select option[value=""][disabled] {
     /* border: red solid; */
     margin: 20px 0 0 400px;
     height: 100%;
+    width: calc(100% - 400px);
 }
 
 #main-content-heading-container {
@@ -622,12 +624,6 @@ select option[value=""][disabled] {
     color: #325bff;
 }
 
-#add-button-container:hover #plus-icon-container {
-    /* color: #325bff;
-    background-color: #6dafff; */
-
-}
-
 #plus-icon-container{
     background-color: #3791ff;
     color: #000000;
@@ -639,8 +635,6 @@ select option[value=""][disabled] {
     width: 36px; */
 }
 
-
-
 #playlists {
     width: 100%;
     display: flex;
@@ -651,3 +645,92 @@ select option[value=""][disabled] {
     justify-content: space-evenly;
     margin: 20px 0 0 0;
 }
+
+/* playlist */
+
+#edit-button-container{
+    width: fit-content;
+    margin:auto;
+    background-color: #3791ff;
+    border-radius: 16px;
+    padding: 4px 1px 4px 6px;
+}
+
+#playlist-edit-button{
+    background-color: #61a8ff;
+    color: #000000;
+    padding: 7px;
+    border-radius: 50%;
+    margin-left: 9px;
+    font-weight: 900;
+}
+
+#comments-container{
+    margin: 26px auto 0;
+    /* border: red solid; */
+    padding: 5px;
+    background-color: #888888;
+}
+
+#comments-heading{
+    /* display: flex; */
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 6px;
+    font-weight: 900;
+    padding: 0;
+    /* align-items: center; */
+    /* height: 28px; */
+    /* border: solid red; */
+        
+}
+
+.comment-username{
+    /* padding: 0 0 0 7px; */
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#comments{
+    padding: 5px;
+    max-height: 252px;
+    overflow: auto;
+}
+
+.comment{
+    margin: 5px auto;
+    background-color: #373737;
+    padding: 8px 15px;
+    /* border: blue solid; */
+}
+
+.comment-body{
+    /* border: green solid; */
+    margin: 7px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80px;
+    width: 100%;
+    text-wrap: pretty;
+}
+
+.comment-text{
+    overflow: auto;
+    max-height: 80px;
+    width:80%;
+}
+
+.comment-image-container{
+    border: blue solid;
+    width: 20%;
+    max-height: 80px;
+}
+
+.comment-image{
+    width: 100%;
+    height: 100%;
+}
+

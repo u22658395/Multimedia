@@ -20,12 +20,14 @@ export class Splash extends React.Component {
 
 
                 <div id="slider">
-                    {this.playlists.map(playlist=>{
-                        return <Playlist key={playlist.id}
-                                image={playlist.image} name={playlist.name} duration={playlist.duration} 
-                                author={playlist.author} rating={playlist.rating} description={playlist.description}
-                                />
-                    })}
+                    {
+                        this.playlists.map(playlist=>{
+                            return <Playlist key={playlist.id}
+                                    image={playlist.image} name={playlist.name} duration={playlist.duration} 
+                                    author={playlist.author} rating={playlist.rating} description={playlist.description}
+                                    />
+                        })
+                    }
                     
                 </div>
 
