@@ -16,7 +16,17 @@ export class App extends React.Component {
                     <Route path="/Home" element={<Home/>}/>
                     {/* // <Route path="/playlists" element={<Playlists/>}/>
                     //<Route path="/playlist" element={<Playlist/>}/> */}
-                     <Route path="/profile" element={<Profile/>}/> 
+                    <Route path="/profile" element={<Profile user={{
+                        username:"unknown_k",
+                        name:"JohnDoe",
+                        phone:"074 654 7890",
+                        email:"johndoe@gmail.com",
+                        playlists:[],
+                        playlistCount:18,
+                        followersCount:18,
+                        followingCount:18,}
+                        }
+                    />}/>
                     
                 </Routes>
             </BrowserRouter>
