@@ -467,29 +467,135 @@ select option[value=""][disabled] {
 
 /* Profile */
 
+#content {
+    /* margin-top: 50px; */
+    /* border: red solid; */
+    position: absolute;
+    top: 111px;
+    /* border: red solid; */
+    /* top */
+}
+
 #profile-info {
     width: 400px;
     height: 100vh;
-    padding-right: 15px;
+    padding: 15px;
     margin-right: 15px;
     float: left;
-    font-style: italic;
-    background-color: lightgray;
-    
+    background-color: lightgray;   
 }
 
 #profile-image-container{
-    width: 100%;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 #profile-image{
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
-#main{
+#details-heading {
+    /* display: flex; */
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 900;
+    padding: 0;
+    /* align-items: center; */
+    /* height: 28px; */
+    /* border: solid red; */
+}
+
+#details-container{
+    margin: 40px auto 20px;
+    /* border: solid red; */
+    font-family: "Red Hat Display", sans-serif;
+    padding: 0 35px;
+    /* border: red solid; */
+}
+
+#details-container> div{
+    margin: 10px 0;
+    /* border: green solid; */
+}
+
+
+.fa-pencil {
+    height: 100%;
+    position: relative;
+    float: right;
+    font-size: 20px;
+    background-color: #67acff;
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.user-detail{
+    font-weight: 800;
+}
+
+.detail-value{
+    padding: 0 0 0 20px;
+}
+
+.fa-regular,.fa-solid{
+    margin: 0 4px;
+}
+
+#friends-container {
+    /* margin: 30px 0; */
+    /* border: solid red; */
+    font-family: "Red Hat Display", sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.counter-container{
+    /* border: #7f2fff solid; */
+    width:85px
+}
+
+.counter-container > div{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.counter{
+    height: 50px;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.counter-name{
+    margin-top: 2px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#main {
     /* border: red solid; */
     margin: 20px 0 0 400px;
     height: 100%;
+}
+
+#main-content-heading-container {
+    margin: auto;
+    text-align: center;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 800;
 }
 
 #playlists {
@@ -501,13 +607,4 @@ select option[value=""][disabled] {
     height: 100%;
     justify-content: space-evenly;
     margin: 20px 0 0 0;
-}
-
-#content{
-    /* margin-top: 50px; */
-    /* border: red solid; */
-    position: absolute;
-    top: 111px;
-    /* border: red solid; */
-    /* top */
 }

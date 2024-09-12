@@ -1,8 +1,10 @@
 import React from 'react';
 
 export class Profile extends React.Component {
+    // user
     constructor(props) {
         super(props)
+        this.user = this.props.user;
     }
     render(){
         return(
@@ -11,15 +13,47 @@ export class Profile extends React.Component {
                     <div id="profile-image-container">
                         <img id="profile-image" src="./assets/images/Designer (7).jpeg" alt=""/>
                     </div>
+
+                    <div id="details-heading">{this.user.username}<i className="fa-solid fa-pencil" ></i></div>
                     <div id="details-container">
-                        <div id="details-heading">User Details</div>
-                        <div id="name-container">Name</div>
-                        <div id="phone-container">Phone Number</div>
-                        <div id="email-container">Email</div>
+                        <div id="name-container">
+                            
+                            <span className='user-detail'><i className="fa-solid fa-user"></i>Name</span>
+                            <div className='detail-value'>{this.user.name}</div>
+                        </div>
+                        <div id="phone-container">
+                            <span className='user-detail'><i className="fa-solid fa-phone"></i>Phone</span>
+                            <div className='detail-value'>{this.user.phone}</div>
+                        </div>
+                        <div id="email-container">
+                            <span className='user-detail'><i className="fa-solid fa-envelope"></i>Email</span>
+                            <div className='detail-value'>{this.user.email}</div>
+                        </div>
                     </div>
-                    <div id="stats-contaner"></div>
+
+                    <div id="friends-container">
+                        <div class="counter-container" >
+                            <div className='counter'>{this.user.playlistCount}</div>
+                            <div className='counter-name'>Playlists</div>
+                        </div>
+                        <div class="counter-container">
+                            <div className='counter'>{this.user.followersCount}</div>
+                            <div className='counter-name'>Followers</div>
+                        </div>
+                        <div class="counter-container">
+                            <div className='counter'>{this.user.followingCount}</div>
+                            <div className='counter-name'>Following</div>
+                        </div>
+                    </div>
+                   
+
                 </aside>
                 <main id="main">
+                    <div id='main-content-heading-container'>
+                        <div className=''></div>
+                        <h1 className='content-heading'>Playlists</h1>
+                        <span className='fa-solid fa-plus'></span>
+                    </div>
                     <div id="playlists">
                         <div className="playlist">
                             <div className="image-container">
@@ -27,14 +61,14 @@ export class Profile extends React.Component {
                             </div>
                             <div className="playlist-content">
                                 <div className="playlist-heading">
-                                    <span className="playlist-title">{this.props.name}</span>
-                                    <span className="playlist-duration">{`${this.props.duration} mins`} </span>
+                                    <span className="playlist-title">John Doe</span>
+                                    <span className="playlist-duration">56 mins </span>
                                 </div>
                                 <div className="playlist-subheading">
-                                    <span className="playlist-author">{this.props.author}</span>
-                                    <span className="playlist-rating">{this.props.rating}</span>
+                                    <span className="playlist-author">John Doe</span>
+                                    <span className="playlist-rating">* * * * *</span>
                                 </div>
-                                <div className="playlist-description">{this.props.description}</div>
+                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder </div>
                             </div>
                         </div>
 
@@ -44,14 +78,14 @@ export class Profile extends React.Component {
                             </div>
                             <div className="playlist-content">
                                 <div className="playlist-heading">
-                                    <span className="playlist-title">{this.props.name}</span>
-                                    <span className="playlist-duration">{`${this.props.duration} mins`} </span>
+                                    <span className="playlist-title">John Doe</span>
+                                    <span className="playlist-duration">56 mins </span>
                                 </div>
                                 <div className="playlist-subheading">
-                                    <span className="playlist-author">{this.props.author}</span>
-                                    <span className="playlist-rating">{this.props.rating}</span>
+                                    <span className="playlist-author">John Doe</span>
+                                    <span className="playlist-rating">* * * * *</span>
                                 </div>
-                                <div className="playlist-description">{this.props.description}</div>
+                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
                             </div>
                         </div>
 
@@ -61,14 +95,14 @@ export class Profile extends React.Component {
                             </div>
                             <div className="playlist-content">
                                 <div className="playlist-heading">
-                                    <span className="playlist-title">{this.props.name}</span>
-                                    <span className="playlist-duration">{`${this.props.duration} mins`} </span>
+                                    <span className="playlist-title">John Doe</span>
+                                    <span className="playlist-duration">56 mins </span>
                                 </div>
                                 <div className="playlist-subheading">
-                                    <span className="playlist-author">{this.props.author}</span>
-                                    <span className="playlist-rating">{this.props.rating}</span>
+                                    <span className="playlist-author">John Doe</span>
+                                    <span className="playlist-rating">* * * * *</span>
                                 </div>
-                                <div className="playlist-description">{this.props.description}</div>
+                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
                             </div>
                         </div>
 
@@ -78,14 +112,14 @@ export class Profile extends React.Component {
                             </div>
                             <div className="playlist-content">
                                 <div className="playlist-heading">
-                                    <span className="playlist-title">{this.props.name}</span>
-                                    <span className="playlist-duration">{`${this.props.duration} mins`} </span>
+                                    <span className="playlist-title">John Doe</span>
+                                    <span className="playlist-duration">56 mins </span>
                                 </div>
                                 <div className="playlist-subheading">
-                                    <span className="playlist-author">{this.props.author}</span>
-                                    <span className="playlist-rating">{this.props.rating}</span>
+                                    <span className="playlist-author">John Doe</span>
+                                    <span className="playlist-rating">* * * * *</span>
                                 </div>
-                                <div className="playlist-description">{this.props.description}</div>
+                                <div className="playlist-description">placeholder placeholder placeholder placeholder placeholder placeholder placeholder placeholder </div>
                             </div>
                         </div>
                     </div>
