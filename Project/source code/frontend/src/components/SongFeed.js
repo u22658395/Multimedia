@@ -1,7 +1,7 @@
 import React from 'react';
 import { Song } from './Song';
 
-export class Songs extends React.Component {
+export class SongFeed extends React.Component {
     constructor(props) {
         super(props)
         this.songs = this.props.songs;

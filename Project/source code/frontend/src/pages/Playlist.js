@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlaylistFeed } from '../components/PlaylistFeed';
+import { SongFeed } from '../components/SongFeed';
 
 export class Playlist extends React.Component {
     constructor(props) {
@@ -72,7 +72,7 @@ export class Playlist extends React.Component {
                             </span>
                         </div>
                     </div>
-                    {/* <PlaylistFeed playlists={this.user.playlists} /> */}
+                    <SongFeed playlists={this.user.playlists} />
                 </main>
             </div>
         )
