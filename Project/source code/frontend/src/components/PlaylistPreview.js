@@ -1,6 +1,6 @@
 import React from "react";
 
-export class Playlist extends React.Component {
+export class PlaylistPreview extends React.Component {
     constructor(props) {
         super(props);
     }
