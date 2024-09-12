@@ -785,4 +785,17 @@ select option[value=""][disabled] {
     text-overflow: ellipsis
 }
 
+/* Home Page */
+#home-header{
+    width: 100%;
+    border: red solid;
+    border-bottom: solid black 1px;
+}
 
+#feed-headings-container{
+    width: fit-content;
+}
+
+.feed-heading{
+    margin:auto
+}
