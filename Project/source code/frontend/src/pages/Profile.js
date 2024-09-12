@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlaylistFeed } from '../components/playlistFeed';
+import { PlaylistFeed } from '../components/PlaylistFeed';
 
 export class Profile extends React.Component {
     // user
@@ -7,18 +7,18 @@ export class Profile extends React.Component {
         super(props)
         this.user = this.props.user;
     }
-    render(){
-        return(
+    render() {
+        return (
             <div id="content">
                 <aside id="profile-info" className="w3-sidebar w3-bar-block">
                     <div id="profile-image-container">
-                        <img id="profile-image" src="./assets/images/Designer (7).jpeg" alt=""/>
+                        <img id="profile-image" src="./assets/images/Designer (7).jpeg" alt="" />
                     </div>
 
                     <div id="details-heading">{this.user.username}<i id='profile-edit-button' className="fa-solid fa-pencil" ></i></div>
                     <div id="details-container">
                         <div id="name-container">
-                            
+
                             <span className='user-detail'><i className="fa-solid fa-user"></i>Name</span>
                             <div className='detail-value'>{this.user.name}</div>
                         </div>
@@ -46,7 +46,7 @@ export class Profile extends React.Component {
                             <div className='counter-name'>Following</div>
                         </div>
                     </div>
-                   
+
 
                 </aside>
                 <main id="main">
