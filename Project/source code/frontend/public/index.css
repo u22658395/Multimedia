@@ -734,3 +734,55 @@ select option[value=""][disabled] {
     height: 100%;
 }
 
+
+/* SongFeed */
+
+
+#songs-heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 13px;
+}
+
+.song-heading-property {
+    width: 120px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Red Hat Display", sans-serif;
+    text-align: center;
+    color: #ffffff;
+    margin: 25px 0 0 0;
+}
+
+#songs{
+    padding: 13px;
+    width: 100%;
+    background-color: #202020;
+    height: 65vh;
+}
+
+/* Song */
+
+.song{
+    width:100%;
+    background-color: rgb(154, 154, 154);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 45px;
+    margin: 12px 0;
+}
+
+.song-property{
+    width: 120px;
+    height: 24px;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+

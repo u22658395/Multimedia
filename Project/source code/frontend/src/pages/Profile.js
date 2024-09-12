@@ -12,7 +12,7 @@ export class Profile extends React.Component {
             <div id="content">
                 <aside id="profile-info" className="w3-sidebar w3-bar-block">
                     <div id="profile-image-container">
-                        <img id="profile-image" src="./assets/images/Designer (7).jpeg" alt="" />
+                        <img id="profile-image" src={`./assets/images/${this.user.image}`} alt="" />
                     </div>
 
                     <div id="details-heading">{this.user.username}<i id='profile-edit-button' className="fa-solid fa-pencil" ></i></div>

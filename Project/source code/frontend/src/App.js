@@ -25,15 +25,18 @@ export class App extends React.Component {
                     <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} />} />
                     {/* // 
                     //<Route path="/playlist" element={<Playlist/>}/> */}
-                    <Route path="/profile" element={<Profile user={{
-                        username:"unknown_k",
-                        name:"JohnDoe",
-                        phone:"074 654 7890",
-                        email:"johndoe@gmail.com",
-                        playlists:this.playlists,
-                        playlistCount:18,
-                        followersCount:18,
-                        followingCount:18,}
+                    <Route path="/profile" element={<Profile user={
+                        {
+                            image:"Designer (7).jpeg",
+                            username:"unknown_k",
+                            name:"JohnDoe",
+                            phone:"074 654 7890",
+                            email:"johndoe@gmail.com",
+                            playlists:this.playlists,
+                            playlistCount:18,
+                            followersCount:18,
+                            followingCount:18,
+                        }
                         }
                     />}/>
                     
