@@ -1,13 +1,37 @@
 import React from 'react';
 import { PlaylistFeed } from '../components/PlaylistFeed';
+import { AddPlaylist } from '../components/AddPlaylist';
+import { Overlay } from '../components/Overlay';
 
 export class Profile extends React.Component {
     // user
     constructor(props) {
         super(props)
         this.user = this.props.user;
+
+        this.state = {
+            toggledOverlay: false
+        }
+        this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.addPlaylistForm = this.addPlaylistForm.bind(this);
     }
+
+    toggleOverlay() {
+        this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+
+    addPlaylistForm() {
+        return <AddPlaylist />
+    }
+    
     render() {
+        let overlay;
+        if (this.state.toggledOverlay) {
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addPlaylistForm} />
+        }
+        else {
+            overlay = "";
+        }
         return (
             <div id="content">
                 <aside id="profile-info" className="w3-sidebar w3-bar-block">
@@ -53,13 +77,15 @@ export class Profile extends React.Component {
                     <div id='main-content-heading-container'>
                         <h1 className='content-heading'>Playlists</h1>
                         <div id='add-button-container'>
-                            <span>Add playlist</span>
+                            <span onClick={this.toggleOverlay}>Add playlist</span>
                             <span id='plus-icon-container'>
                                 <i className='fa-solid fa-lg fa-plus '></i>
                             </span>
                         </div>
                     </div>
                     <PlaylistFeed playlists={this.user.playlists} />
+                    {overlay}
+
                 </main>
             </div>
         )

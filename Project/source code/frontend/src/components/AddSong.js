@@ -9,7 +9,6 @@ export class AddSong extends React.Component {
             validDuration: true,
             validLink: true,
         }
-        this.toggleRegister = this.toggleRegister.bind(this);
         this.validateForm = this.validateForm.bind(this);
 
         this.titleInput = React.createRef();
