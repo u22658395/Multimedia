@@ -2,6 +2,7 @@ import React from 'react';
 import { PlaylistFeed } from '../components/PlaylistFeed';
 import { AddPlaylist } from '../components/AddPlaylist';
 import { Overlay } from '../components/Overlay';
+import { EditUserForm } from '../components/EditUserForm';
 
 export class Profile extends React.Component {
     // user
@@ -10,27 +11,49 @@ export class Profile extends React.Component {
         this.user = this.props.user;
 
         this.state = {
-            toggledOverlay: false
+            toggledOverlay: false,
+            toggledEditOverlay:false
         }
         this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.toggleEditOverlay = this.toggleEditOverlay.bind(this);
+        this.closeOverlay = this.closeOverlay.bind(this);
         this.addPlaylistForm = this.addPlaylistForm.bind(this);
+    }
+
+    closeOverlay(){
+        this.setState({ toggledOverlay: false });
+        this.setState({ toggledEditOverlay: false });
     }
 
     toggleOverlay() {
         this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+    
+    toggleEditOverlay() {
+        this.setState({ toggledEditOverlay: !this.state.toggledEditOverlay });
     }
 
     addPlaylistForm() {
         return <AddPlaylist />
     }
     
+    editUserForm() {
+        return <EditUserForm  />
+    }
+    
     render() {
         let overlay;
         if (this.state.toggledOverlay) {
-            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addPlaylistForm} />
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addPlaylistForm} closeOverlay={this.closeOverlay} />
         }
         else {
-            overlay = "";
+            if (this.state.toggledEditOverlay) {
+                overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.editUserForm} closeOverlay={this.closeOverlay} />
+            }
+            else {
+
+                overlay = "";
+            }
         }
         return (
             <div id="content">
@@ -39,7 +62,7 @@ export class Profile extends React.Component {
                         <img id="profile-image" src={`./assets/images/${this.user.image}`} alt="" />
                     </div>
 
-                    <div id="details-heading">{this.user.username}<i id='profile-edit-button' className="fa-solid fa-pencil" ></i></div>
+                    <div id="details-heading">{this.user.username}<i onClick={this.toggleEditOverlay} id='profile-edit-button' className="fa-solid fa-pencil" ></i></div>
                     <div id="details-container">
                         <div id="name-container">
 

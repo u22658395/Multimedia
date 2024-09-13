@@ -1,0 +1,15 @@
+#u22658395
+FROM node
+
+WORKDIR /app
+
+#Copies everything in the current directory into the workdirectory (except for file in dockerignore)
+COPY . . 
+
+RUN npm install
+
+ENV PORT=3000
+
+CMD [ "npm", "start" ]
+
+EXPOSE 3000
