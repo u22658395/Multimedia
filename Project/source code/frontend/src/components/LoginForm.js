@@ -53,7 +53,7 @@ export class LoginForm extends React.Component {
     }
     render() {
         return (
-            <div id="login-container" >
+            <div id="form-container" >
                 <div className="wrapper">
                     <div className="inner">
                         <div className="image-holder">
