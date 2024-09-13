@@ -1,7 +1,10 @@
 import React from "react";
 import { PlaylistPreview } from "../components/PlaylistPreview";
+import { Overlay } from "../components/Overlay";
+import { LoginForm } from "../components/LoginForm";
 
 export class Splash extends React.Component {
+
     playlists = [
         { id: 1, image: "Designer (10).jpeg", name: "Rap", duration: 56, author: "John Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
         { id: 2, image: "Designer (11).jpeg", name: "Rap", duration: 35, author: "Marry Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
@@ -9,7 +12,32 @@ export class Splash extends React.Component {
         { id: 4, image: "Designer (8).jpeg", name: "Rap", duration: 36, author: "James Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
 
     ]
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            toggledOverlay: false
+        }
+        this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.loginForm = this.loginForm.bind(this);
+    }
+
+    toggleOverlay() {
+        this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+
+    loginForm() {
+        return <LoginForm />
+    }
+    
     render() {
+        let overlay;
+        if (this.state.toggledOverlay) {
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.loginForm} />
+        }
+        else {
+            overlay = "";
+        }
         return (
             <div id="content">
                 <h1 className="welcome-text" id="heading-text">Welcome to GrooveList: Your Musical Oasis</h1>
@@ -18,6 +46,8 @@ export class Splash extends React.Component {
                     curator, an avid listener, or a musical explorer, GrooveList is the perfect place for you. Connect with fellow music
                     lovers, uncover hidden gems, and let the rhythm guide you.</p>
 
+                <span onClick={this.toggleOverlay} className="page" id="login-button">Login</span>
+                {overlay}
 
                 <div id="slider">
                     {
