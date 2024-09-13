@@ -3,7 +3,6 @@ export class AddSong extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggledRegister: false,
             validTitle: true,
             validArtist: true,
             validAlbum: true,
@@ -21,10 +20,6 @@ export class AddSong extends React.Component {
 
     }
 
-    toggleRegister(e) {
-        e.preventDefault;
-        this.setState({ toggledRegister: !this.state.toggledRegister });
-    }
     validateForm(e) {
         e.preventDefault();
 
@@ -65,7 +60,9 @@ export class AddSong extends React.Component {
             this.setState({ validLink: true });
         }
         
-
+        // if (validTitle && validArtist && validAlbum && validDuration) {
+        //     toggleOverlay();
+        // }
 
     }
     render() {
