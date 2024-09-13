@@ -143,7 +143,7 @@ body{
     max-width:300px;
     height: 380px;
     box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.612);
-    margin:10px 40px;
+    margin:15px 40px;
     padding: 10px;
     overflow: hidden;
 }
@@ -464,12 +464,6 @@ select option[value=""][disabled] {
 }
 
 
-/* div[class$="row"] {
-    margin: 0%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-} */
-
 /* Profile */
 
 #content {
@@ -651,7 +645,7 @@ select option[value=""][disabled] {
     margin: 20px 0 0 0;
 }
 
-/* playlist */
+/* playlist page*/
 
 #edit-button-container{
     width: fit-content;
@@ -756,7 +750,7 @@ select option[value=""][disabled] {
     font-weight: 700;
     font-family: "Red Hat Display", sans-serif;
     text-align: center;
-    color: #ffffff;
+    color: #000;
     margin: 25px 0 0 0;
 }
 
@@ -793,8 +787,20 @@ select option[value=""][disabled] {
 /* Home Page */
 #home-heading{
     text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 900;
 }
+
+#search-countainer{
+    text-align: center;
+    margin: 60px auto;
+    
+}
+
 #home-header{
+    margin-top: 60px 0 0 0;
     width: 100%;
     /* border: red solid; */
     border-bottom: solid black 1px;
@@ -812,7 +818,7 @@ select option[value=""][disabled] {
 }
 
 .feed-heading{
-    border: blue solid;
+    border-radius: 5px;
     padding: 10px;
     width: 120px;
     text-align: center;
@@ -820,4 +826,36 @@ select option[value=""][disabled] {
     justify-content: center;
     align-items: center;
     margin: 0 3px;
+    cursor: pointer;
+    color: #6d6df9;
+}
+
+.feed-heading:hover{
+    background-color: #67acff;
+    color: #000000;
+}
+
+#search-input{
+    border: #000000 solid 1px;
+    border-radius: 25px;
+    height: 48px;
+    padding:auto;
+    text-align: center;
+    background-color: #6d6df900;
+    color: #6d6df9;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#search-button{
+    outline: none;
+    border: none;
+    background-color: #6d6df9;
+    border-radius: 50%;
+    align-items: center;
+    color: black;
+    width: 39px;
+    height: 39px;
+    margin-left: 9px;
+    cursor: pointer;
 }

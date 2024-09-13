@@ -8,11 +8,49 @@ import { Playlist } from "./pages/Playlist";
 
 
 export class App extends React.Component {
+    songs=[
+        {
+            title: "Fula",
+            artist: "Chronical Deep",
+            album: "Fula-Single",
+            duration: "07:58",
+            link: "https://music.apple.com/za/album/fula/1707836582?i=1707836587"
+        },
+        {
+            title: "Bala",
+            artist: "Kelvin Momo",
+            album: "Bala-Single",
+            duration: "06:44",
+            link: "https://music.apple.com/za/album/bala-feat-sykes/1760196900?i=1760196902"
+        },
+        {
+            title: "No Big Deal",
+            artist: "Nasty C",
+            album: "No Big Deal-Single",
+            duration: "04:20",
+            link: "https://music.apple.com/za/album/no-big-deal/1657364135?i=1657364136"
+        },
+        {
+            title: "Hymn Medley",
+            artist: "Spirit of Praise",
+            album: "Spirit of Oraise 10 (Live)",
+            duration: "12:37",
+            link: "https://music.apple.com/za/album/hymn-medley-live-feat-teboho-moloi/1762644780?i=1762645283"
+        },
+        {
+            title: "Life",
+            artist: "Lute",
+            album: "Life-Single",
+            duration: "03:15",
+            link: "https://music.apple.com/za/album/life/1521718500?i=1521718575"
+        },
+    ]
+
     playlists = [
         { 
             id: 1,
             image: "Designer (10).jpeg",
-            name: "Rap",
+            name: "Jazz",
             duration: 56,
             author: "John Doe",
             rating: "* * * * *",
@@ -42,33 +80,56 @@ export class App extends React.Component {
 
             ]
         },
-        { id: 2, image: "Designer (11).jpeg", name: "Rap", duration: 35, author: "Marry Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
-        { id: 3, image: "Designer (9).jpeg", name: "Rap", duration: 36, author: "Jane Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
-        { id: 4, image: "Designer (8).jpeg", name: "Rap", duration: 36, author: "James Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
+        { id: 2, image: "Designer (11).jpeg", name: "Pop", duration: 35, author: "Marry Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
+        { id: 3, image: "Designer (9).jpeg", name: "House", duration: 10, author: "Jane Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
+        { id: 4, image: "Designer (8).jpeg", name: "Reggae", duration: 26, author: "James Doe", rating: "* * * * *", description: "Dive into a world where faith meets rhythm, and the Word flows with the beat. Heavenly Beats is your go-to playlist for the freshest and most inspiring Christian rap tracks. Whether you're seeking spiritual upliftment, thought-provoking lyrics, or just some head-nodding beats, this collection has it all. From powerful testimonies to lyrical sermons, each track is crafted to elevate your soul and" },
 
     ]
+    constructor(props) {
+        super(props)
+        this.state = {
+            "playlists": this.playlists
+        }
+        this.searchPlaylistFeed = this.searchPlaylistFeed.bind(this);
+    }
+
+    searchPlaylistFeed(searchTerm) {
+        searchTerm = searchTerm.toLowerCase()
+        if (searchTerm.trim() === '') {
+            this.setState({ playlists: this.playlists });
+        }
+        else {
+            this.setState({
+                playlists: this.playlists.filter(playlist => playlist.name.toLowerCase().includes(searchTerm))
+            });
+
+        }
+
+    }
     render() {
         return (
             <BrowserRouter>
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Splash/>}/>
-                    <Route path="/Home" element={<Home playlists={this.playlists}/>}/>
+
+                    <Route path="/Home" element={<Home playlists={this.state.playlists} songs={this.songs} handleSearch={this.searchPlaylistFeed}/>}/>
+
+
                     <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} />} />
-                    {/* // 
-                    //<Route path="/playlist" element={<Playlist/>}/> */}
+                    
                     <Route path="/profile" element={<Profile user={
-                        {
-                            image:"Designer (7).jpeg",
-                            username:"unknown_k",
-                            name:"JohnDoe",
-                            phone:"074 654 7890",
-                            email:"johndoe@gmail.com",
-                            playlists:this.playlists,
-                            playlistCount:18,
-                            followersCount:18,
-                            followingCount:18,
-                        }
+                            {
+                                image:"Designer (7).jpeg",
+                                username:"unknown_k",
+                                name:"JohnDoe",
+                                phone:"074 654 7890",
+                                email:"johndoe@gmail.com",
+                                playlists:this.playlists,
+                                playlistCount:18,
+                                followersCount:18,
+                                followingCount:18,
+                            }
                         }
                     />}/>
                     

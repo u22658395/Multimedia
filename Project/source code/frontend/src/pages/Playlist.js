@@ -49,7 +49,7 @@ export class Playlist extends React.Component {
                 </aside>
                 <main id="main">
                     <div id='main-content-heading-container'>
-                        <h1 className='content-heading'>songs</h1>
+                        <h1 className='content-heading'>Songs</h1>
                         
                             <div id='add-button-container'>
                                 <span>Add song</span>
