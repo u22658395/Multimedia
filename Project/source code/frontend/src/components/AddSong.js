@@ -28,35 +28,37 @@ export class AddSong extends React.Component {
     validateForm(e) {
         e.preventDefault();
 
-        if (!this.titleInput.current.value.match(emailRegex)) {
+        if (!this.titleInput.current.value.trim().length > 0) {
             this.setState({ validTitle: false });
         }
         else {
             this.setState({ validTitle: true });
         }
 
-        if (!this.artistInput.current.value.match(passRegex)) {
+        if (!this.artistInput.current.value.trim().length > 0) {
             this.setState({ validArtist: false });
         }
         else {
             this.setState({ validArtist: true });
         }
 
-        if (this.albumInput.current.value) {
+        if (!this.albumInput.current.value.trim().length > 0 ) {
             this.setState({ validAlbum: false });
         }
         else {
             this.setState({ validAlbum: true });
         }
+
+        const timePattern = /^(0[0-9]|[1-5][0-9]):([0-5][0-9])$/;
         
-        if (this.durationInput.current.value) {
+        if (this.durationInput.current.value.trim().length <= 0 || !timePattern.test(this.durationInput.current.value)) {
             this.setState({ validDuration: false });
         }
         else {
             this.setState({ validDuration: true });
         }
         
-        if (this.linkInput.current.value) {
+        if (this.linkInput.current.value.trim().length <=0) {
             this.setState({ validLink: false });
         }
         else {
@@ -95,7 +97,7 @@ export class AddSong extends React.Component {
                                         <div className="error-message"><b>Invalid artist name:</b></div>
                                         : ""
                                 }
-                                <input id="Artist" name="Artist" type="password" className="form-control" ref={this.artistInput} />
+                                <input id="Artist" name="Artist" type="text" className="form-control" ref={this.artistInput} />
                                 <i className="zmdi zmdi-lock"></i>
                             </div>
 
@@ -106,18 +108,18 @@ export class AddSong extends React.Component {
                                         <div className="error-message"><b>Invalid album name</b></div>
                                         : ""
                                 }
-                                <input id="Album" name="Album" type="password" className="form-control" ref={this.albumInput} />
+                                <input id="Album" name="Album" type="text" className="form-control" ref={this.albumInput} />
                                 <i className="zmdi zmdi-lock"></i>
                             </div>
                             
                             <div className="form-wrapper">
-                                <label htmlFor="Duration"><b>Duration:</b></label>
+                                <label htmlFor="Duration"><b>Duration (mm:ss):</b></label>
                                 {
                                     !this.state.validDuration ?
                                         <div className="error-message"><b>Invalid duration</b></div>
                                         : ""
                                 }
-                                <input id="Duration" name="Duration" type="password" className="form-control" ref={this.durationInput} />
+                                <input id="Duration" name="Duration" type="text" className="form-control" ref={this.durationInput} />
                                 <i className="zmdi zmdi-lock"></i>
                             </div>
                             
@@ -128,7 +130,7 @@ export class AddSong extends React.Component {
                                         <div className="error-message"><b>Invalid Link</b></div>
                                         : ""
                                 }
-                                <input id="Link" name="Link" type="password" className="form-control" ref={this.linkInput} />
+                                <input id="Link" name="Link" type="text" className="form-control" ref={this.linkInput} />
                                 <i className="zmdi zmdi-lock"></i>
                             </div>
                                     

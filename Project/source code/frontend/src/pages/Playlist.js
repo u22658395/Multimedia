@@ -1,12 +1,33 @@
 import React from 'react';
 import { SongFeed } from '../components/SongFeed';
+import { AddSong } from '../components/AddSong';
+import { Overlay } from '../components/Overlay';
 
 export class Playlist extends React.Component {
     constructor(props) {
         super(props)
-        this.playlist = this.props.playlist;        
+        this.playlist = this.props.playlist;   
+        
+        this.state = {
+            toggledOverlay: false
+        }
+        this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.addSongForm = this.addSongForm.bind(this);
+    }
+    toggleOverlay() {
+        this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+    addSongForm() {
+        return <AddSong />
     }
     render() {
+        let overlay;
+        if (this.state.toggledOverlay) {
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addSongForm} />
+        }
+        else {
+            overlay = "";
+        }
         return (
             <div id="content">
                 <aside id="profile-info" className="w3-sidebar w3-bar-block">
@@ -52,7 +73,7 @@ export class Playlist extends React.Component {
                         <h1 className='content-heading'>Songs</h1>
                         
                             <div id='add-button-container'>
-                                <span>Add song</span>
+                            <span onClick={this.toggleOverlay}>Add song</span>
                                 <span id='plus-icon-container'>
                                     <i className='fa-solid fa-lg fa-plus '></i>
                                 </span>
@@ -61,6 +82,7 @@ export class Playlist extends React.Component {
                     </div>
                     <SongFeed songs={this.playlist.songs} />
                 </main>
+                {overlay}
             </div>
         )
     }

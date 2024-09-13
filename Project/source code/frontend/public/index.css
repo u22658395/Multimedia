@@ -253,7 +253,7 @@ body{
     max-width: 850px;
     margin: auto;
     display: flex;
-    height: fit-content;
+    height: 100%;
     max-width: 700px;
     /* max-height: 560px; */
 }
@@ -267,7 +267,7 @@ body{
 }
 
 .image-holder {
-    max-height: 445px;
+    /* max-height: 445px; */
 }
 
 .image-holder>img {
@@ -280,6 +280,7 @@ body{
     padding-top: 36px;
     padding-left: 45px;
     padding-right: 45px;
+    height: 100%;
 }
 
 .inner h3 {
