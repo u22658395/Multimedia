@@ -786,6 +786,7 @@ select option[value=""][disabled] {
 }
 
 /* Home Page */
+
 #home-heading{
     text-align: center;
     color: #fff;
@@ -819,7 +820,8 @@ select option[value=""][disabled] {
 }
 
 .feed-heading{
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     padding: 10px;
     width: 120px;
     text-align: center;
@@ -832,6 +834,11 @@ select option[value=""][disabled] {
 }
 
 .feed-heading:hover{
+    background-color: #67acff;
+    color: #000000;
+}
+
+.current-feed{
     background-color: #67acff;
     color: #000000;
 }
