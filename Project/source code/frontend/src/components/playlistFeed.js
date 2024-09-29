@@ -5,6 +5,10 @@ export class PlaylistFeed extends React.Component {
         super(props)
     }
     render() {
+
+        if(this.props.playlists.length == 0){
+            return <div id="playlists"><h1>Not found!</h1></div>
+        }
         return (
             <div id="playlists">
                 {

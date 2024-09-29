@@ -8,7 +8,7 @@ export class Search extends React.Component {
     }
     search(e) {
         e.preventDefault();
-        this.props.handleSearch(this.searchInput.current.value);
+        this.props.handleSearch(this.searchInput.current.value,this.props.feed);
     }
     render() {
         return (

@@ -3,12 +3,13 @@ import { Song } from './Song';
 
 export class SongFeed extends React.Component {
     constructor(props) {
-        super(props)
-        this.songs = this.props.songs;
-        console.log(this.songs);
-        
+        super(props)        
     }
     render() {
+
+        if (this.props.songs.length == 0) {
+            return <div id="playlists"><h1>Not found!</h1></div>
+        }
         return(
             <>
                 <div id='songs-heading'>
@@ -20,7 +21,7 @@ export class SongFeed extends React.Component {
                 <div id='songs'>
                     
                     {
-                        this.songs.map(song=>{
+                        this.props.songs.map(song=>{
                             return <Song key={song.id} title={song.title} artist={song.artist} album={song.album} duration={song.duration} link={song.link} />
                         })
                     }

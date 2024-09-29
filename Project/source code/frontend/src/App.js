@@ -33,7 +33,7 @@ export class App extends React.Component {
         {
             title: "Hymn Medley",
             artist: "Spirit of Praise",
-            album: "Spirit of Oraise 10 (Live)",
+            album: "Spirit of Praise 10 (Live)",
             duration: "12:37",
             link: "https://music.apple.com/za/album/hymn-medley-live-feat-teboho-moloi/1762644780?i=1762645283"
         },
@@ -88,22 +88,43 @@ export class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            "playlists": this.playlists
+            "playlists": this.playlists,
+            "songs": this.songs
         }
-        this.searchPlaylistFeed = this.searchPlaylistFeed.bind(this);
+        this.searchFeed = this.searchFeed.bind(this);
     }
 
-    searchPlaylistFeed(searchTerm) {
+    searchFeed(searchTerm, feed) {
         searchTerm = searchTerm.toLowerCase()
-        if (searchTerm.trim() === '') {
-            this.setState({ playlists: this.playlists });
+        
+        
+        if(feed == "songs"){
+            if (searchTerm.trim() === '') {
+                this.setState({ songs: this.songs });
+            }
+            else {
+                this.setState({
+                    songs: this.songs.filter(song => {
+                        return song.title.toLowerCase().includes(searchTerm) || song.album.toLowerCase().includes(searchTerm) || song.artist.toLowerCase().includes(searchTerm)
+                    }),
+                });
+            }
         }
-        else {
-            this.setState({
-                playlists: this.playlists.filter(playlist => playlist.name.toLowerCase().includes(searchTerm))
-            });
+        else{
+            if (searchTerm.trim() === '') {
+                this.setState({ playlists: this.playlists });
+            }
+            else {
+                this.setState({
+                    playlists: this.playlists.filter(playlist => {
+                        return playlist.name.toLowerCase().includes(searchTerm) || playlist.author.toLowerCase().includes(searchTerm)
+                    })
+                });
+            }
+        }
+        
 
-        }
+        
 
     }
     render() {
@@ -113,7 +134,7 @@ export class App extends React.Component {
                 <Routes>
                     <Route path="/" element={<Splash/>}/>
 
-                    <Route path="/Home" element={<Home playlists={this.state.playlists} songs={this.songs} handleSearch={this.searchPlaylistFeed}/>}/>
+                    <Route path="/Home" element={<Home playlists={this.state.playlists} songs={this.state.songs} handleSearch={this.searchFeed}/>}/>
 
 
                     <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} />} />
