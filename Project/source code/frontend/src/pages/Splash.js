@@ -19,11 +19,16 @@ export class Splash extends React.Component {
             toggledOverlay: false
         }
         this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.closeOverlay = this.closeOverlay.bind(this);
         this.loginForm = this.loginForm.bind(this);
     }
 
     toggleOverlay() {
         this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+
+    closeOverlay() {
+        this.setState({ toggledOverlay: false });
     }
 
     loginForm() {
@@ -33,7 +38,7 @@ export class Splash extends React.Component {
     render() {
         let overlay;
         if (this.state.toggledOverlay) {
-            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.loginForm} />
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.loginForm} closeOverlay={this.closeOverlay} />
         }
         else {
             overlay = "";
