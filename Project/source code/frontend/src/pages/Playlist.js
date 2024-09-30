@@ -12,10 +12,15 @@ export class Playlist extends React.Component {
             toggledOverlay: false
         }
         this.toggleOverlay = this.toggleOverlay.bind(this);
+        this.closeOverlay = this.closeOverlay.bind(this);
         this.addSongForm = this.addSongForm.bind(this);
     }
     toggleOverlay() {
         this.setState({ toggledOverlay: !this.state.toggledOverlay });
+    }
+    closeOverlay() {
+        this.setState({ toggledOverlay: false });
+        // this.setState({ toggledEditOverlay: false });
     }
     addSongForm() {
         return <AddSong />
@@ -23,7 +28,7 @@ export class Playlist extends React.Component {
     render() {
         let overlay;
         if (this.state.toggledOverlay) {
-            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addSongForm} />
+            overlay = <Overlay toggleOverlay={this.toggleOverlay} content={this.addSongForm} closeOverlay={this.closeOverlay} />
         }
         else {
             overlay = "";
