@@ -266,9 +266,9 @@ body{
     background-color: rgba(0, 0, 0, 0.975);
 }
 
-.image-holder {
-    /* max-height: 445px; */
-}
+/* .image-holder {
+    max-height: 445px; 
+} */
 
 .image-holder>img {
     width: 60%;
@@ -737,7 +737,6 @@ select option[value=""][disabled] {
 
 /* SongFeed */
 
-
 #songs-heading {
     width: 100%;
     display: flex;
@@ -866,4 +865,17 @@ select option[value=""][disabled] {
     height: 39px;
     margin-left: 9px;
     cursor: pointer;
+}
+
+#feed-error{
+    margin: 10% auto;
+    color: red;
+   
+}
+
+#feed-error>h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 900;
 }

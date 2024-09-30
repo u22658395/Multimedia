@@ -8,7 +8,7 @@ export class SongFeed extends React.Component {
     render() {
 
         if (this.props.songs.length == 0) {
-            return <div id="playlists"><h1>Not found!</h1></div>
+            return <div id="feed-error"><h1>No songs found!</h1></div>
         }
         return(
             <>
