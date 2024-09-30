@@ -535,6 +535,7 @@ select option[value=""][disabled] {
     background-color: #67acff;
     padding: 7px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .user-detail{
@@ -578,6 +579,7 @@ select option[value=""][disabled] {
     font-size: 35px;
     font-weight: 800;
     margin-bottom: 2px;
+    cursor: pointer;
 }
 
 .counter-name{
@@ -654,6 +656,7 @@ select option[value=""][disabled] {
     background-color: #3791ff;
     border-radius: 16px;
     padding: 4px 1px 4px 6px;
+    cursor: pointer;
 }
 
 #playlist-edit-button{
@@ -771,6 +774,7 @@ select option[value=""][disabled] {
     align-items: center;
     height: 45px;
     margin: 12px 0;
+    text-decoration: none;
 }
 
 .song-property{
@@ -849,7 +853,7 @@ select option[value=""][disabled] {
     padding:auto;
     text-align: center;
     background-color: #6d6df900;
-    color: #6d6df9;
+    color: #448cff;
     font-size: 20px;
     font-weight: 700;
 }
