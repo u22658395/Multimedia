@@ -92,6 +92,7 @@ export class App extends React.Component {
             "songs": this.songs
         }
         this.searchFeed = this.searchFeed.bind(this);
+        this.addSong = this.addSong.bind(this);
     }
 
     searchFeed(searchTerm, feed) {
@@ -122,10 +123,23 @@ export class App extends React.Component {
                 });
             }
         }
-        
+    }
 
-        
+    addSong(song,playlistId){
+        if(playlistId){
+            const playlist = this.playlists.find(p => p.id === playlistId);
 
+            if (playlist) {
+                playlist.songs.push(song);
+                console.log(`Song added to playlist: ${playlist.name}`);
+            } else {
+                console.log(`Playlist with id ${playlistId} not found.`);
+            }
+            // this.playlists[playlistId].songs.push(song);
+        }
+        else{
+            this.songs.push(song);
+        }
     }
     render() {
         return (
@@ -137,7 +151,7 @@ export class App extends React.Component {
                     <Route path="/Home" element={<Home playlists={this.state.playlists} songs={this.state.songs} handleSearch={this.searchFeed}/>}/>
 
 
-                    <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} />} />
+                    <Route path="/playlist" element={<Playlist playlist={this.playlists[0]} addSong={this.addSong}/>} />
                     
                     <Route path="/profile" element={<Profile user={
                             {

@@ -23,7 +23,7 @@ export class Playlist extends React.Component {
         // this.setState({ toggledEditOverlay: false });
     }
     addSongForm() {
-        return <AddSong />
+        return <AddSong addSong={this.props.addSong} playlistId={this.playlist.id}/>
     }
     render() {
         let overlay;

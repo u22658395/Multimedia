@@ -22,6 +22,7 @@ export class AddSong extends React.Component {
     validateForm(e) {
         e.preventDefault();
 
+
         if (!this.titleInput.current.value.trim().length > 0) {
             this.setState({ validTitle: false });
         }
@@ -59,9 +60,16 @@ export class AddSong extends React.Component {
             this.setState({ validLink: true });
         }
         
-        // if (validTitle && validArtist && validAlbum && validDuration) {
-        //     toggleOverlay();
-        // }
+
+        if (this.state.validTitle && this.state.validArtist && this.state.validAlbum && this.state.validDuration && this.state.validLink) {
+            this.props.addSong({
+                title: this.titleInput.current.value.trim(),
+                artist: this.artistInput.current.value.trim(),
+                album: this.albumInput.current.value.trim(),
+                duration: this.durationInput.current.value.trim(),
+                link: this.linkInput.current.value.trim(),
+            },this.props.playlistId)
+        }
 
     }
     render() {
