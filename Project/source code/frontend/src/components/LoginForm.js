@@ -21,11 +21,12 @@ export class LoginForm extends React.Component {
         e.preventDefault;
         this.setState({ toggledRegister: !this.state.toggledRegister });
     }
+
     validateForm(e){
         e.preventDefault();
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         
-        if(!this.emailInput.current.value.match(emailRegex)){
+        if(!this.emailInput.current.value.trim().match(emailRegex)){
             this.setState({validEmail:false});
         }
         else{
@@ -33,7 +34,7 @@ export class LoginForm extends React.Component {
         }
         
         let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/
-        if(!this.passInput.current.value.match(passRegex)){
+        if(!this.passInput.current.value.trim().match(passRegex)){
             this.setState({validPass:false});
         }
         else {
@@ -41,7 +42,7 @@ export class LoginForm extends React.Component {
         }
 
         if(this.state.toggledRegister){
-            if (this.confPassInput.current.value !== this.passInput.current.value){
+            if (this.confPassInput.current.value.trim() =='' || this.confPassInput.current.value.trim() !== this.passInput.current.value){
                 this.setState({ validConfPass: false });
             }
             else {
@@ -56,9 +57,6 @@ export class LoginForm extends React.Component {
             <div id="form-container" >
                 <div className="wrapper">
                     <div className="inner">
-                        <div className="image-holder">
-                            <img id="img" src="./assets/logo/groovelist-high-resolution-logo-transparent.svg" alt="" />
-                        </div>
                         <div id="form">
                             <h3><strong>{this.state.toggledRegister ? "Sign Up" : "Login"}</strong></h3>
 
@@ -66,7 +64,7 @@ export class LoginForm extends React.Component {
                                 <label htmlFor="Email"><b>Email:</b></label>
                                 {
                                     !this.state.validEmail?
-                                    <div className="error-message"><b>Invalid Email:</b></div>
+                                    <div className="error-message"><b>Invalid Email*</b></div>
                                     :""
                                 }
                                 <input id="Email" name="Email" type="text" className="form-control" ref={this.emailInput} />
@@ -77,7 +75,7 @@ export class LoginForm extends React.Component {
                                 <label htmlFor="Password"><b>Password:</b></label>
                                 {
                                     !this.state.validPass ?
-                                        <div className="error-message"><b>Invalid Password:</b></div>
+                                        <div className="error-message"><b>Invalid Password*</b></div>
                                         : ""
                                 }
                                 <input id="Password" name="Password" type="password" className="form-control" ref={this.passInput} />
@@ -90,7 +88,7 @@ export class LoginForm extends React.Component {
                                         <label htmlFor="Confirm-Password"><b>Confirm Password:</b></label>
                                         {
                                             !this.state.validConfPass ?
-                                                <div className="error-message"><b>Passwords must be the same</b></div>
+                                                <div className="error-message"><b>Passwords must match and must not be empty</b></div>
                                                 : ""
                                         }
                                         <input id="Confirm-Password" name="Confirm-Password" type="password" className="form-control" ref={this.confPassInput} />

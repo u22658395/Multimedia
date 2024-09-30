@@ -276,7 +276,7 @@ body{
 }
 
 .inner #form {
-    width: 50%;
+    width: 100%;
     padding-top: 36px;
     padding-left: 45px;
     padding-right: 45px;
@@ -853,7 +853,7 @@ select option[value=""][disabled] {
     padding:auto;
     text-align: center;
     background-color: #6d6df900;
-    color: #448cff;
+    color: #44a1ff;
     font-size: 20px;
     font-weight: 700;
 }

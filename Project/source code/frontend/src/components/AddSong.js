@@ -69,9 +69,6 @@ export class AddSong extends React.Component {
             <div id="form-container" >
                 <div className="wrapper">
                     <div className="inner">
-                        <div className="image-holder">
-                            <img id="img" src="./assets/logo/groovelist-high-resolution-logo-transparent.svg" alt="" />
-                        </div>
                         <div id="form">
                             <h3><strong>New Song</strong></h3>
 
