@@ -11,9 +11,8 @@ export class Navbar extends React.Component {
 
                     <span id="pages">
                         <Link to="/Home" className="page">Home</Link>
-                        <Link to="/playlist" className="page">Playlists</Link>
-                        <Link to="/profile" className="page">Profile</Link>
-                        <Link to="/profile/:id" className="page">Profile</Link>
+                        <Link to="/playlist/1" className="page">Playlists</Link>
+                        <Link to="/profile/1" className="page">Profile</Link>
                     </span>
                 </div>
             </div>

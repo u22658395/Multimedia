@@ -15,6 +15,11 @@ export class Playlist extends React.Component {
         this.closeOverlay = this.closeOverlay.bind(this);
         this.addSongForm = this.addSongForm.bind(this);
     }
+
+    componentDidMount(){
+        console.log(this.props.params.playlistId);
+        
+    }
     toggleOverlay() {
         this.setState({ toggledOverlay: !this.state.toggledOverlay });
     }
@@ -25,6 +30,8 @@ export class Playlist extends React.Component {
     addSongForm() {
         return <AddSong addSong={this.props.addSong} playlistId={this.playlist.id}/>
     }
+
+
     render() {
         let overlay;
         if (this.state.toggledOverlay) {
@@ -91,4 +98,8 @@ export class Playlist extends React.Component {
             </div>
         )
     }
+}
+
+export function WithPlaylistProps() {
+    return props => <Playlist {...props} params={useParams()} />
 }

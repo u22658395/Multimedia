@@ -2,6 +2,7 @@ import React from "react";
 import { PlaylistPreview } from "../components/PlaylistPreview";
 import { Overlay } from "../components/Overlay";
 import { LoginForm } from "../components/LoginForm";
+import { Navbar } from "../components/Navbar";
 
 export class Splash extends React.Component {
 
@@ -44,6 +45,8 @@ export class Splash extends React.Component {
             overlay = "";
         }
         return (
+            <>
+                <Navbar /> 
             <div id="content">
                 <h1 className="welcome-text" id="heading-text">Welcome to GrooveList: Your Musical Oasis</h1>
                 <p className="welcome-text" id="sub-heading">Step into GrooveList, where your musical journey begins. Here, melodies come alive, playlists tell stories, and every
@@ -67,6 +70,7 @@ export class Splash extends React.Component {
                 </div>
 
             </div>
+        </>
         )
     }
 }

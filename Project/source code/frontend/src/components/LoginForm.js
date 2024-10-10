@@ -50,6 +50,37 @@ export class LoginForm extends React.Component {
             }
         }
 
+        if (toggledRegister && validEmail && validPass && validConfPass){
+            fetch('/register',{
+                method:"POST",
+                body:{
+                    email:this.emailInput,
+                    password:this.passInput,
+                    confirm:this.confPassInput
+                }
+            })
+            .then(res=>{
+                console.log(res);
+                
+            })
+        }
+        else{
+            if(!toggledRegister && validEmail && validPass && validConfPass) {
+                fetch('/login', {
+                    method: "POST",
+                    body: {
+                        email: this.emailInput,
+                        password: this.passInput,
+                        // confirm: this.confPassInput
+                    }
+                })
+                .then(res => {
+                    console.log(res);
+
+                })
+            }
+
+        }
 
     }
     render() {

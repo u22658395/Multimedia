@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export class PlaylistPreview extends React.Component {
     constructor(props) {
@@ -6,7 +7,7 @@ export class PlaylistPreview extends React.Component {
     }
     render() {
         return (
-            <div className="playlist">
+            <Link className="playlist" to={`/playlist/${this.props.id}`}>
                 <div className="image-container">
                     <img src={`./assets/images/${this.props.image}`} alt="" className="playlist-image" />
                 </div>
@@ -21,7 +22,7 @@ export class PlaylistPreview extends React.Component {
                     </div>
                     <div className="playlist-description">{this.props.description}</div>
                 </div>
-            </div>
+            </Link>
         )
     }
 

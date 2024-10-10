@@ -2,24 +2,59 @@ import React from "react";
 import { PlaylistFeed } from "../components/PlaylistFeed";
 import { SongFeed } from "../components/SongFeed";
 import { Search } from "../components/Search";
+import { Navbar } from "../components/Navbar";
 export class Home extends React.Component {
     
     constructor(props){
         super(props);
         this.state = {
             content:"playlists",
-            playlists:this.props.playlists
         }
         this.togglePlaylists = this.togglePlaylists.bind(this);
         this.toggleSongs = this.toggleSongs.bind(this);
+        this.fetchData = this.fetchData.bind(this);
 
         this.searchInput = React.createRef();
     }
-    togglePlaylists(){
-        this.setState({content:"playlists"});
+
+    fetchData(dataType){
+        if (dataType == "playlists"){
+            fetch("/playlists")
+                .then(res => {
+                    this.setState({ playlists: res })
+            })
+        }
+        else
+        {
+            fetch("/songs")
+            .then(res=>{
+                this.setState({songs:res})
+            })
+        }
     }
+
+    componentDidMount(){
+        console.log("Mount");
+        this.fetchData("playlists")
+        //works like a charm :)
+    }
+
+    componentDidUpdate(prevProps){
+
+    }
+
+    togglePlaylists(){
+        if (this.state.content !="playlists"){
+            this.setState({content:"playlists"});
+            this.fetchData("playlists")
+        }
+    }
+
     toggleSongs(){
-        this.setState({content:"songs"});
+        if(this.state.content != "songs"){
+            this.setState({content:"songs"});
+            this.fetchData("songs")
+        }
     }
     
     render() {
@@ -36,6 +71,8 @@ export class Home extends React.Component {
             songHeadingSpan = <span onClick={this.toggleSongs} className="feed-heading current-feed">Songs</span>
         }
         return (
+            <>
+                <Navbar/> 
             <div id="content">
                 <h1 id="home-heading">Home</h1>
                 <Search handleSearch={this.props.handleSearch} feed={this.state.content}/>
@@ -47,9 +84,10 @@ export class Home extends React.Component {
                     </div>
                 </div>
                 {
-                    this.state.content == "playlists" ? <PlaylistFeed playlists={this.props.playlists} /> : <SongFeed songs={this.props.songs} />
+                    this.state.content == "playlists" ? <PlaylistFeed playlists={this.state.playlists} /> : <SongFeed songs={this.state.songs} />
                 }
             </div>
+            </>
         );
     }
 }
